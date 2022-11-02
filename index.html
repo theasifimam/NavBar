@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .desktop {
+            display: flex;
+            justify-content: start;
+            padding: 2rem;
+        }
+
+        .desktop a {
+            padding: 0 1rem;
+            text-decoration: none;
+            color: black;
+        }
+
+        .desktop button {
+            margin: 1rem;
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        @media screen and (max-width: 580px) {
+
+            .desktop a:not(:first-child) {
+                display: none;
+            }
+
+            .desktop button {
+                display: block;
+                width: 80px;
+                padding: 8px 15px;
+            }
+
+            .mobile {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+                background: blue;
+            }
+
+            .mobile a {
+                margin: 1rem 0;
+                display: block !important;
+                color: white;
+                background-color: lightblue;
+                text-align: center;
+                width: 60%;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+    <title>Responsive Navigation Bar</title>
+</head>
+
+<body>
+    <nav class="desktop" id="navbar">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Site Map</a>
+
+        <button>menu</button>
+    </nav>
+
+
+
+
+
+    <script>
+        document.getElementById("navbar").addEventListener("click", toggleFunction);
+
+        function toggleFunction() {
+            document.getElementById("navbar").classList.toggle("mobile");
+        }
+    </script>
+</body>
+
+</html>
